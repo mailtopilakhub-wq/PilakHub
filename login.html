@@ -3,27 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - PilakHub</title>
+    <title>PilakHub | Login & Register</title>
+
     <link rel="stylesheet" href="Assets/css/style.css">
     <script type="module" src="auth.js" defer></script>
 </head>
 <body>
-    <div class="auth-container">
-        <div class="card">
-            <h2>Login to Your Account</h2>
-            <form id="login-form">
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter your password" required>
-                </div>
-                <button type="submit" class="btn">Login</button>
-            </form>
-            <p>Don't have an account? <a href="register.html">Register here</a></p>
+
+<div class="auth-container">
+    <div class="card">
+
+        <!-- TOGGLE BUTTONS -->
+        <div class="toggle-buttons">
+            <button id="loginBtn" class="active">Login</button>
+            <button id="registerBtn">Register</button>
         </div>
+
+        <!-- LOGIN FORM -->
+        <form id="login-form" class="form active-form">
+
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Login to continue</p>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="login-email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="login-password" required>
+            </div>
+
+            <p id="login-error" class="error-text"></p>
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <!-- REGISTER FORM -->
+        <form id="register-form" class="form">
+
+            <h2>Create Account</h2>
+            <p class="subtitle">Join PilakHub today</p>
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="reg-name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="reg-email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Mobile Number</label>
+                <input type="tel" id="reg-mobile" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="reg-password" required>
+            </div>
+
+            <p id="register-error" class="error-text"></p>
+
+            <button type="submit" class="btn">Register</button>
+        </form>
+
     </div>
+</div>
+
+<!-- TOGGLE SCRIPT -->
+<script>
+    const loginBtn = document.getElementById("loginBtn");
+    const registerBtn = document.getElementById("registerBtn");
+    const loginForm = document.getElementById("login-form");
+    const registerForm = document.getElementById("register-form");
+
+    loginBtn.onclick = () => {
+        loginBtn.classList.add("active");
+        registerBtn.classList.remove("active");
+        loginForm.classList.add("active-form");
+        registerForm.classList.remove("active-form");
+    };
+
+    registerBtn.onclick = () => {
+        registerBtn.classList.add("active");
+        loginBtn.classList.remove("active");
+        registerForm.classList.add("active-form");
+        loginForm.classList.remove("active-form");
+    };
+</script>
+
 </body>
 </html>
