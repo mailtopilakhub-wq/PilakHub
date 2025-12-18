@@ -41,35 +41,45 @@
         </form>
 
         <!-- REGISTER FORM -->
-        <form id="register-form" class="form">
+<form id="register-form" class="form">
 
-            <h2>Create Account</h2>
-            <p class="subtitle">Join PilakHub today</p>
+    <h2>Create Account</h2>
+    <p class="subtitle">Join PilakHub today</p>
 
-            <div class="input-group">
-                <label>Full Name</label>
-                <input type="text" id="reg-name" required>
-            </div>
+    <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" id="reg-name" required>
+    </div>
 
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" id="reg-email" required>
-            </div>
+    <div class="input-group">
+        <label>Email</label>
+        <input type="email" id="reg-email" required>
+    </div>
 
-            <div class="input-group">
-                <label>Mobile Number</label>
-                <input type="tel" id="reg-mobile" required>
-            </div>
+    <div class="input-group">
+        <label>Mobile Number</label>
+        <input type="tel" id="reg-mobile" required>
+    </div>
 
-            <div class="input-group">
-                <label>Password</label>
-                <input type="password" id="reg-password" required>
-            </div>
+    <!-- REFERRAL CODE (OPTIONAL) -->
+    <div class="input-group">
+        <label>Referral Code <span style="color:#6b7280;">(Optional)</span></label>
+        <input 
+            type="text" 
+            id="reg-referral" 
+            placeholder="Enter referral code (if any)"
+        >
+    </div>
 
-            <p id="register-error" class="error-text"></p>
+    <div class="input-group">
+        <label>Password</label>
+        <input type="password" id="reg-password" required>
+    </div>
 
-            <button type="submit" class="btn">Register</button>
-        </form>
+    <p id="register-error" class="error-text"></p>
+
+    <button type="submit" class="btn">Register</button>
+</form>
 
     </div>
 </div>
